@@ -1,0 +1,18 @@
+.badge-pill {
+    display: block;
+    font-size: 0.9rem;
+    background-color: #999;
+    font-weight: var(--bold);
+    color: #fff;
+    padding: 0.5rem 0.5rem 0.3rem 0.5rem;
+    margin-inline-start: 0.5rem;
+    border-radius: 15px;
+}
+
+.badge-cyan {
+    background-color: var(--clr-primary-desat-dark-cyan);
+}
+
+.badge-dark {
+    background-color: var(--clr-neutral-very-dark-grayish-cyan);
+}

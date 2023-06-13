@@ -1,3 +1,25 @@
+:root {
+    /* Variables */
+    /** Layout **/
+    --mobile-width: 375px;
+    --desktop-width: 1440px;
+
+    /** Colors **/
+    --clr-primary-desat-dark-cyan: hsl(180, 29%, 50%);
+    --clr-neutral-light-grayish-cyan: hsl(180, 52%, 96%);
+    --clr-neutral-very-light-grayish-cyan: hsl(180, 31%, 95%);
+    --clr-neutral-dark-grayish-cyan: hsl(180, 8%, 52%);
+    --clr-neutral-very-dark-grayish-cyan: hsl(180, 14%, 20%);
+
+    /* Headings */
+    --league-spartan: "League Spartan";
+
+    /* Weights */
+    --medium: 500;
+    --bold: 700;
+}
+
+/* Reset CSS */
 *,
 ::before,
 ::after {
@@ -5,3 +27,30 @@
     margin: 0;
     padding: 0;
 }
+
+/* Elements */
+body {
+    font-family: var(--league-spartan), sans-serif;
+    min-height: 100vh;
+    background-color: var(--clr-neutral-very-light-grayish-cyan);
+}
+
+button {
+    font-family: var(--league-spartan), sans-serif;
+    font-size: 1rem;
+    font-weight: var(--bold);
+    color: var(--clr-primary-desat-dark-cyan);
+    background-color: var(--clr-neutral-light-grayish-cyan);
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5rem 0.75rem;
+    margin-inline: 0.5rem;
+    cursor: pointer;
+    transition: all 0.4s ease-out;
+}
+
+button:hover {
+    background-color: var(--clr-primary-desat-dark-cyan);
+    color: var(--clr-neutral-very-light-grayish-cyan);
+}
+

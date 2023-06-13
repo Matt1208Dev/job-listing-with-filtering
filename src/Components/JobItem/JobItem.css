@@ -1,0 +1,92 @@
+:root {
+    /* Variables */
+    /** Layout **/
+    --mobile-width: 375px;
+    --desktop-width: 1440px;
+
+    /** Colors **/
+    --clr-primary-desat-dark-cyan: hsl(180, 29%, 50%);
+    --clr-neutral-light-grayish-cyan: hsl(180, 52%, 96%);
+    --clr-neutral-very-light-grayish-cyan: hsl(180, 31%, 95%);
+    --clr-neutral-dark-grayish-cyan: hsl(180, 8%, 52%);
+    --clr-neutral-very-dark-grayish-cyan: hsl(180, 14%, 20%);
+
+    /* Headings */
+    --league-spartan: "League Spartan";
+
+    /* Weights */
+    --medium: 500;
+    --bold: 700;
+}
+
+.job-item {
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    padding: 1.8rem 2.5rem;
+    border-radius: 0.5rem;
+    margin-block-end: 1.5rem;
+    overflow: hidden;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0.5rem 1rem rgba(91, 164, 164, 0.3); /* 0px 8px 16px */
+}
+
+.featured {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 0.3125rem; /* 5px */
+    background-color: var(--clr-primary-desat-dark-cyan);
+}
+
+.job-infos__pic {
+    max-width: 5.5rem;
+    max-height: 5.5rem;
+}
+
+/* .job-item:not(.job-item:last-child()) {
+    margin-block-end: 2rem;
+} */
+
+.job-item,
+.job-infos,
+.job-infos__txt__header {
+    display: flex;
+}
+
+.job-infos__txt__header {
+    align-items: center;
+}
+
+.job-infos__txt {
+    margin-left: 1.5rem;
+}
+
+.job-infos__txt > *:nth-child(even) {
+    margin-block: 0.4rem;
+}
+
+.company {
+    font-size: 1.25rem;
+    color: var(--clr-primary-desat-dark-cyan);
+    font-weight: var(--medium);
+}
+
+.position {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--clr-neutral-very-dark-grayish-cyan);
+    transition: color 0.25s ease;
+}
+
+.position:hover {
+    color: var(--clr-primary-desat-dark-cyan);
+}
+
+.job-infos__txt__details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.15rem;
+    color: var(--clr-neutral-dark-grayish-cyan);
+}
