@@ -1,53 +1,33 @@
-:root {
-    /* Variables */
-    /** Layout **/
-    --mobile-width: 375px;
-    --desktop-width: 1440px;
-
-    /** Colors **/
-    --clr-primary-desat-dark-cyan: hsl(180, 29%, 50%);
-    --clr-neutral-light-grayish-cyan: hsl(180, 52%, 96%);
-    --clr-neutral-very-light-grayish-cyan: hsl(180, 31%, 95%);
-    --clr-neutral-dark-grayish-cyan: hsl(180, 8%, 52%);
-    --clr-neutral-very-dark-grayish-cyan: hsl(180, 14%, 20%);
-
-    /* Headings */
-    --league-spartan: "League Spartan";
-
-    /* Weights */
-    --medium: 500;
-    --bold: 700;
-}
-
+/* Bandeau offre d'emploi */
 .job-item {
     position: relative;
     width: 100%;
     background-color: #fff;
-    padding: 1.8rem 2.5rem;
+    padding: 1.8rem clamp(1.125rem, 4vw, 2.5rem);
     border-radius: 0.5rem;
     margin-block-end: 1.5rem;
-    overflow: hidden;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 0.5rem 1rem rgba(91, 164, 164, 0.3); /* 0px 8px 16px */
 }
 
+/* marqueur visuel de mise en avant d'une annonce */
 .featured {
     position: absolute;
+    top: 0;
     left: 0;
     height: 100%;
     width: 0.3125rem; /* 5px */
     background-color: var(--clr-primary-desat-dark-cyan);
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
 }
 
+/* Logo entreprise */
 .job-infos__pic {
     max-width: 5.5rem;
     max-height: 5.5rem;
 }
-
-/* .job-item:not(.job-item:last-child()) {
-    margin-block-end: 2rem;
-} */
 
 .job-item,
 .job-infos,
@@ -68,13 +48,17 @@
 }
 
 .company {
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 4vw, 1.2rem);
     color: var(--clr-primary-desat-dark-cyan);
     font-weight: var(--medium);
 }
 
+.separator {
+    display: none;
+}
+
 .position {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 4vw, 1.4rem);
     text-decoration: none;
     color: var(--clr-neutral-very-dark-grayish-cyan);
     transition: color 0.25s ease;
@@ -89,4 +73,61 @@
     justify-content: space-between;
     font-size: 1.15rem;
     color: var(--clr-neutral-dark-grayish-cyan);
+}
+
+.job-infos__txt__details > *:nth-child(even) {
+    margin-inline: clamp(0.5rem, 2vw, 1rem);
+}
+
+/* MEDIA QUERIES */
+/* Écrans mobiles jusqu'à 576px */
+@media screen and (width <= 576px) {
+    .job-item {
+        padding-block-end: 1.3rem;
+        margin-block-end: 3rem;
+    }
+    .job-infos__pic {
+        position: absolute;
+        top: 0;
+        left: 1.5rem;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: clamp(2.75rem, 12vw, 5.5rem);
+    }
+
+    .job-infos__txt {
+        margin-left: unset;
+    }
+
+    .job-item .badge {
+        margin-block: 0.5rem;
+    }
+}
+
+/* Écrans mobiles jusqu'à 990px */
+@media screen and (width <= 990px) {
+    .job-item {
+        width: calc(100% - 3rem);
+        margin-inline: auto;
+        flex-direction: column;
+        max-width: 42.5rem;
+    }
+
+    .separator {
+        display: block;
+        margin-block: 1rem 0.5rem;
+        width: 95%;
+        max-width: 27rem;
+        border: none;
+        border-top: 1px solid var(--clr-neutral-dark-grayish-cyan);
+    }
+}
+
+/* Écrans jusqu'à 1200px */
+@media screen and (width <= 1200px) {
+    .job-item,
+    .filter-group {
+        width: calc(100% - 3rem);
+        margin-inline: auto;
+    }
 }

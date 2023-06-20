@@ -54,3 +54,7 @@ button:hover {
     color: var(--clr-neutral-very-light-grayish-cyan);
 }
 
+/* Utils */
+.vis-hidden {
+    visibility: hidden;
+}

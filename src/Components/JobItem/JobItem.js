@@ -2,57 +2,59 @@ import React, { useState } from "react";
 import "./JobItem.css";
 import Badge from "../Badge/Badge";
 import BadgePill from "../BadgePill/BadgePill";
+import { v4 as uuidv4 } from "uuid";
 
 export default function JobItem(props) {
-    const data = useState({ ...props.data });
-    const tools = data[0].tools;
-    const languages = data[0].languages;
+    // Données d'une annonce fournies via props
+    const [data, setData] = useState({ ...props.data });
 
-    console.log(data);
     return (
-        <div className="job-item">
-            {data[0].featured && <div className="featured"></div>}
+        <div key={data.id} className="job-item">
+            {data.featured && <div className="featured"></div>}
             <div className="job-infos">
                 {/* Logo */}
                 <img
                     className="job-infos__pic"
-                    src={process.env.PUBLIC_URL + data[0].logo}
-                    alt={`Logo de ${
-                        process.env.PUBLIC_URL + data[0].company
-                    }`}
+                    src={process.env.PUBLIC_URL + data.logo}
+                    alt={`Logo de ${process.env.PUBLIC_URL + data.company}`}
                 />
                 {/* Textes */}
                 <div className="job-infos__txt">
+                    {/* Nom entreprise, badges nouveauté, mise en avant */}
                     <header className="job-infos__txt__header">
-                        <h4 className="company">{data[0].company}</h4>
-                        {data[0].new && <BadgePill>NEW!</BadgePill>}
-                        {data[0].featured && <BadgePill>FEATURED</BadgePill>}
+                        <h4 className="company">{data.company}</h4>
+                        {data.new && <BadgePill>NEW!</BadgePill>}
+                        {data.featured && <BadgePill>FEATURED</BadgePill>}
                     </header>
+                    {/* Intitulé de poste */}
                     <h3>
                         <a className="position" href="#">
-                            {data[0].position}
+                            {data.position}
                         </a>
                     </h3>
+                    {/* Infos ancienneté, lieu, contrat */}
                     <div className="job-infos__txt__details">
-                        <span>{data[0].postedAt}</span>
+                        <span>{data.postedAt}</span>
                         <span>▪</span>
-                        <span>{data[0].contract}</span>
+                        <span>{data.contract}</span>
                         <span>▪</span>
-                        <span>{data[0].location}</span>
+                        <span>{data.location}</span>
                     </div>
                 </div>
             </div>
+            <hr className="separator" />
+            {/* Badges */}
             <div className="job-infos__tags">
-                {data[0].role && <Badge>{data[0].role}</Badge>}
-                {data[0].level && <Badge>{data[0].level}</Badge>}
-                {languages
-                    ? data[0].languages.map((language, index) => {
-                          return <Badge>{language}</Badge>;
+                {data.role && <Badge>{data.role}</Badge>}
+                {data.level && <Badge>{data.level}</Badge>}
+                {data.languages
+                    ? data.languages.map((language, index) => {
+                          return <Badge key={uuidv4()}>{language}</Badge>;
                       })
                     : ""}
-                {tools
-                    ? data[0].tools.map((tool, index) => {
-                          return <Badge>{tool}</Badge>;
+                {data.tools
+                    ? data.tools.map((tool, index) => {
+                          return <Badge key={uuidv4()}>{tool}</Badge>;
                       })
                     : ""}
             </div>
