@@ -1,3 +1,4 @@
+/* Conteneur principal */
 .filter-group {
     display: flex;
     justify-content: space-between;
@@ -10,12 +11,14 @@
     box-shadow: 0 0.5rem 1rem rgba(91, 164, 164, 0.3); /* 0px 8px 16px */
 }
 
+/* Bouton d'effacement des filtres */
 .btn-clear {
     background-color: #fff;
     color: var(--clr-neutral-dark-grayish-cyan);
     padding: 0;
 }
 
+/* Effet de survol du bouton d'effacement */
 .btn-clear:hover {
     text-decoration: underline;
     text-underline-offset: 0.1rem;

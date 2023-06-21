@@ -29,6 +29,7 @@
     max-height: 5.5rem;
 }
 
+/* Conteneurs de texte */
 .job-item,
 .job-infos,
 .job-infos__txt__header {
@@ -76,7 +77,7 @@
 }
 
 .job-infos__txt__details > *:nth-child(even) {
-    margin-inline: clamp(0.5rem, 2vw, 1rem);
+    margin-inline: clamp(0.5rem, 2vw, 0.9rem);
 }
 
 /* MEDIA QUERIES */
@@ -86,6 +87,12 @@
         padding-block-end: 1.3rem;
         margin-block-end: 3rem;
     }
+
+    .job-infos {
+        padding-inline: 0.5rem;
+        width: 100%;
+    }
+
     .job-infos__pic {
         position: absolute;
         top: 0;

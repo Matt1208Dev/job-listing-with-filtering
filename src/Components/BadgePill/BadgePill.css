@@ -1,3 +1,4 @@
+/* Style global du badge-pill */
 .badge-pill {
     display: block;
     font-size: 0.9rem;
@@ -9,10 +10,12 @@
     border-radius: 15px;
 }
 
+/* Variante couleur cyan */
 .badge-cyan {
     background-color: var(--clr-primary-desat-dark-cyan);
 }
 
+/* Variante couleur cyan version dark */
 .badge-dark {
     background-color: var(--clr-neutral-very-dark-grayish-cyan);
 }

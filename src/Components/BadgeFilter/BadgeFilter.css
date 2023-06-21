@@ -1,3 +1,4 @@
+/* Conteneur global */
 .badge-filter {
     display: inline-flex;
     margin-inline-end: 0.5rem;
@@ -20,6 +21,7 @@
     background-color: var(--clr-neutral-light-grayish-cyan);
 }
 
+/* Bouton X */
 .btn-close {
     display: flex;
     justify-content: center;
@@ -33,6 +35,7 @@
     transition: background-color 0.4s ease-out;
 }
 
+/* Effet de survol */
 .btn-close:hover {
     background-color: var(--clr-neutral-very-dark-grayish-cyan);
 }

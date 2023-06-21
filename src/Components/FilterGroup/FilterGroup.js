@@ -13,11 +13,12 @@ export default function FilterGroup(props) {
             className={
                 props.isFiltering
                     ? "container filter-group"
-                    : "container filter-group vis-hidden"
+                    : "container filter-group vis-hidden" // Invisible si pas de filtre actif
             }
         >
-            <div className="filters">
+            <div className="filters"> 
                 {tags.map((tag) => {
+                    // Affichage des filtres
                     return (
                         <BadgeFilter key={uuidv4()} dataTag={tag}>
                             {tag}
@@ -25,7 +26,7 @@ export default function FilterGroup(props) {
                     );
                 })}
             </div>
-
+            {/* Bouton "clear" */}
             <button
                 onClick={() =>
                     dispatch({

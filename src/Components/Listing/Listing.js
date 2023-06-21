@@ -8,38 +8,57 @@ import { useSelector } from "react-redux";
 
 export default function Listing() {
     const tags = useSelector((state) => state.filter);
+    // Etat en filtrage
     const [isFiltering, setIsFiltering] = useState(false);
 
+    // Activation de l'état "en filtrage", selon la présence ou non de filtre
     useEffect(() => {
         if (tags.length === 0) {
             setIsFiltering(false);
         } else {
             setIsFiltering(true);
         }
-    }, [tags])
+    }, [tags]);
 
     return (
         <div className="container">
             <div className="banner"></div>
             <div className="list">
-            <FilterGroup isFiltering={isFiltering} />
+                <FilterGroup isFiltering={isFiltering} />
                 {Data.map((item) => {
+                    // Si un tag (au moins) est selectionné
                     if (isFiltering) {
+                        // On récupère les tags de l'item courant
                         const itemTags = [
                             item.level,
                             item.role,
                             ...item.languages,
                             ...item.tools,
                         ];
+                        // Et on les comparent au tag sélectionné
                         for (let tag of tags) {
+                            // S'il est présent dans l'item courant, on affiche l'item (annonce)
                             if (itemTags.includes(tag)) {
                                 return <JobItem key={uuidv4()} data={item} />;
                             }
                         }
                     } else {
+                        // Pas de tag sélectionné : On affiche tous les items (annonces)
                         return <JobItem key={uuidv4()} data={item} />;
                     }
                 })}
+                <div class="attribution">
+                    <p>
+                        Challenge by{" "}
+                        <a
+                            href="https://www.frontendmentor.io?ref=challenge"
+                            target="_blank"
+                        >
+                            Frontend Mentor
+                        </a>
+                        . Coded by Matthieu Gueulle.
+                    </p>
+                </div>
             </div>
         </div>
     );
