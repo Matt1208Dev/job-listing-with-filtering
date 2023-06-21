@@ -26,6 +26,7 @@ export default function Listing() {
             <div className="list">
                 <FilterGroup isFiltering={isFiltering} />
                 {Data.map((item) => {
+                    let tagFound = false;
                     // Si un tag (au moins) est selectionné
                     if (isFiltering) {
                         // On récupère les tags de l'item courant
@@ -35,12 +36,21 @@ export default function Listing() {
                             ...item.languages,
                             ...item.tools,
                         ];
-                        // Et on les comparent au tag sélectionné
+                        // Et on les compare au tag sélectionné
                         for (let tag of tags) {
-                            // S'il est présent dans l'item courant, on affiche l'item (annonce)
+                            // S'il est présent dans l'item courant, tagFound devient true
                             if (itemTags.includes(tag)) {
-                                return <JobItem key={uuidv4()} data={item} />;
+                                tagFound = true;
+                            } else {
+                                // le tag n'est pas retrouvé. tagFound est false, les itération s'arrête.
+                                tagFound = false;
+                                break;
                             }
+                        }
+
+                        // Si le témoin tagFound est true, alors le/les tags ont tous été retrouvé dans l'item courant, on affiche l'item (annonce)
+                        if (tagFound) {
+                            return <JobItem key={uuidv4()} data={item} />;
                         }
                     } else {
                         // Pas de tag sélectionné : On affiche tous les items (annonces)

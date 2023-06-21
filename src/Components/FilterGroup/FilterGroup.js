@@ -16,7 +16,7 @@ export default function FilterGroup(props) {
                     : "container filter-group vis-hidden" // Invisible si pas de filtre actif
             }
         >
-            <div className="filters"> 
+            <div className="filters">
                 {tags.map((tag) => {
                     // Affichage des filtres
                     return (
@@ -27,17 +27,19 @@ export default function FilterGroup(props) {
                 })}
             </div>
             {/* Bouton "clear" */}
-            <button
-                onClick={() =>
-                    dispatch({
-                        type: "filter/clearFilters",
-                        payload: "",
-                    })
-                }
-                className="btn-clear"
-            >
-                Clear
-            </button>
+            {props.isFiltering && (
+                <button
+                    onClick={() =>
+                        dispatch({
+                            type: "filter/clearFilters",
+                            payload: "",
+                        })
+                    }
+                    className="btn-clear"
+                >
+                    Clear
+                </button>
+            )}
         </div>
     );
 }
