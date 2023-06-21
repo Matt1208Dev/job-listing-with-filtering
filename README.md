@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# Job Listing page solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Cet application web est ma version du challenge [Job Listing page de Frontend Mentor](https://www.frontendmentor.io/challenges/job-listings-with-filtering-ivstIPCt)
 
-## Available Scripts
+## Le challenge
 
-In the project directory, you can run:
+L'utilisateur doit pouvoir :
 
-### `npm start`
+-   Consulter la page de manière optimale, quelque soit le device utilisé
+-   Observer des animations au survol de tous les éléments intéractifs de la page
+-   Filtrer les résultats en cliquant sur les tags présent dans les annonces
+-   Supprimer un ou plusieurs filtres en cliquant dessus dans le bandeau de filtres
+-   Réinitialiser tous les filtres en cliquant sur "Clear"
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Screenshots
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Aperçu de la version desktop
+![Screenshot page Desktop](./src/Assets/Screenshots/screenshot-job-listing-desktop.png)
 
-### `npm test`
+Aperçu de la version mobile
+![Screenshot page Mobile](./src/Assets/Screenshots/screenshot-job-listing-mobile.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Le process
 
-### `npm run build`
+### Technos
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-   CSS Vanilla
+-   Flexbox
+-   Responsive Layout
+-   Librairies JS
+    -   [React](https://reactjs.org/)
+    -   [Redux-Toolkit](https://redux-toolkit.js.org/)
+    -   [React Redux](https://react-redux.js.org/)
+    -   [UUID](https://github.com/uuidjs/uuid#readme)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Ce que cela m'a apporté
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-   Améliorer ma reflexion en terme de composants React et leur logique de fonctionnement
+-   Un entraînement à l'utilisation de Redux Toolkit, qui facilite grandement l'accès aux données dans toute l'application
+-   Utilisation de fonctions CSS comme clamp() et usage de variables, afin de réduire le nombre de lignes de CSS pour le responsive et les répétitions
+-   Travail du comportement responsif des élements. Maintenir un visuel, une taille et une lisibilité accrue, quelque soit la dimension de l'écran
 
-### `npm run eject`
+### Ressources
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+-   [MDN](https://developer.mozilla.org/fr/) - Ma ressource première pour HTML, CSS et JavaScript
+-   [Formation React](https://www.udemy.com/course/react-formation-complete/) par [Enzo Ustariz](https://www.youtube.com/@EcoleduWeb).
+-   [Introduction à Redux Toolkit](https://youtu.be/1lvnT2oE0_4) par [Lior Chamla](https://www.youtube.com/@LiorCHAMLA)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Author
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-   [Matthieu Gueulle](www.linkedin.com/in/matthieu-gueulle) - LinkedIn
